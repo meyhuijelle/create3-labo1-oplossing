@@ -723,19 +723,39 @@ input::placeholder {
     /* background: red; */
 }
 
+.c-custom-option__fake-input:hover {
+    border: var(--global-borderWidth) solid var(--global-input-hover-borderColor);
+}
+.c-option--hidden:focus + .c-custom-option .c-custom-option__fake-input {
+    border: var(--global-borderWidth) solid var(--global-color-alpha);
+    box-shadow: var(--global-input-boxShadow);
+}
+
 .c-custom-option__symbol{
-    display:none;
-    /* opacity: 0; */
+    /* display:none; */
+    opacity: 0;
+    transform: scale(.5);
+    transition: .1s;
+    transition: .1s ease-in-out;
+    transition-property: opacity, transform; 
+    /* hierboven is voor het wat te animeren */
+    /* transition moet om de originele state zijn je wil van 0 naar 1 transition doen.*/
+
 }
 
 .c-custom-option__fake-input--checkbox .c-custom-option__symbol{
     width: 10px;
+    height: 10px;
     fill: var(--global-color-alpha);
 
 }
 
-.C-custom-option__fake-input--radio .c-custom-option__symbol{
-    display: flex;
+.c-custom-option__fake-input--radio .c-custom-option__symbol{
+    /* display: flex; */
+    width: 6px;
+    height: 6px;
+    background-color: var(--global-color-alpha);
+    border-radius: 100%;
 
 }
 
@@ -756,6 +776,8 @@ input::placeholder {
     */
     /* background-color: red; */
     display: block;
+    opacity: 1;
+    transform: scale(1);
     /* dit is omdat de check zou terugkomen, eerder plaatsten we dit al op none. */
   }
 
