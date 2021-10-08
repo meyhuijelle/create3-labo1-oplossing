@@ -827,23 +827,30 @@ input::placeholder {
     box-shadow: var(--global-input-boxShadow);
 }
 
-.c-custom-option__symbol{
-    /* display:none; */
+/* .c-custom-option__symbol{
+     display:none; 
     opacity: 0;
     transform: scale(.5);
     transition: .1s;
     transition: .1s ease-in-out;
     transition-property: opacity, transform; 
-    /* hierboven is voor het wat te animeren */
-    /* transition moet om de originele state zijn je wil van 0 naar 1 transition doen.*/
+    hierboven is voor het wat te animeren 
+     transition moet om de originele state zijn je wil van 0 naar 1 transition doen.
 
+} */
+
+.c-custom-option__symbol {
+    display: block;
+    opacity: 0; /* Hide the symbol initially */
+    transform: scale(.5);
+    transition: transform var(--global-transitionTiming-alpha), opacity var(--global-transitionTiming-alpha);
 }
 
-.c-custom-option__fake-input--checkbox .c-custom-option__symbol{
+
+.c-custom-option__fake-input--checkbox .c-custom-option__symbol {
     width: 10px;
     height: 10px;
-    fill: var(--global-color-alpha);
-
+    fill: var(--custom-option__symbol-Fill);
 }
 
 .c-custom-option__fake-input--radio .c-custom-option__symbol{
