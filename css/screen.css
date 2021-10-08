@@ -295,7 +295,7 @@ input {
 }
 
 input::placeholder {
-    color: var(--global-color-neutral-x-light);
+    color: var(--global-placeholder-color);
 }
 
 /*------------------------------------*\
@@ -682,6 +682,36 @@ input::placeholder {
     ---
     Class to put on all input="text" like form inputs
 */
+
+/* .c-input { */
+    /* resetten van de input */
+    /* -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; */
+    /* ------------------- */
+    /* width: 100%; */
+    /* border: var(--global-borderWidth) solid var(--global-color-neutral-xxx-light); */
+    /* border: var(--global-borderWidth) solid var(--global-label-borderColor);
+    border-radius: var(--global-borderRadius);
+    color: var(--global-color-neutral-xxxx-dark);
+    background-color: var(--global-label-backgroundColor); */
+
+    /* Input velden erven de globale font-family jammergenoeg niet over.
+     Zorg er voor dat dit ook weer Inter wordt. Pro tip: probeer eens de value inherit.  
+     Daarmee zeg je dat de font-family mag overgeërfd worden van het element waarvan de font-family 
+     is gedeclareerd die een parent is van het huidige element, in dit geval de html-tag.*/
+    /* font-family: inherit;
+    font-size: 16px;
+    line-height: calc(var(--global-baseline) * 3);
+    padding: calc(var(--global-baseline) * 1.5 - var(--global-borderWidth)) var(--global-whitespace-md); */
+    /* An outline is a line drawn outside the element's border.
+    Om duidelijk te maken in welk inputveld je zit krijgt het inputveld een outline als het gefocust is. (Dit geldt trouwens voor elk HTML element die interactief is). Die outline is per platform en browser een beetje anders. Bovendien kan je de outline niet volledig designen zoals in het design. Dus we gaan de outline afzetten. 
+    Dat doe je door de outline property op none te zetten. 
+    
+     Als je de outline op none zet moet je altijd een alternatief designen! */
+    /* outline: none;
+    transition: border var(--global-transition-timing-alpha); */
+/* } */
 
 .c-input {
     /* resetten van de input */
